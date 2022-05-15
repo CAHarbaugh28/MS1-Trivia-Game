@@ -6,25 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepardy</title>
     <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script> -->
+
+
 </head>
 <body>
-<div class = 'homePage'>
+<div id = "homePage">
     <div class = 'header'>
-        <h1>Pepardy</h1>
+        <button onclick="window.location.href = 'main.html';">Pepardy</button>
         <h3>The game were you could win thousands of dollars!</h3>
         <p>*Money won in the game is not real.</p>
     </div>
 
-    <div class = 'startGame'>
+    <div id = "playerNumber">
         <h2>How many players do we have?</h2>
-        <button class="button1">One Player</button> 
-        <button class="button2">Two Players</button>
+        <button onclick="onePlayer()" class="button1">One Player</button> 
+        <button onclick="twoPlayers()" class="button2">Two Players</button>
     </div>
    
-    <div class = 'instructions'>
+    <div id = "instructions">
         <h2>Instructions</h2>
         <p>Pick a tile from one of the 4 categorys with easiest at the top and more challenging at the bottom. The more challenging the question; the more money you could win. If you're playing with a friend then you will go back and forth picking and answering questions trying to earn the most money before all the questions have been answered.</p>
     </div>
+    <div id = "singlePlayer" style="display: none;">
+        <input type="text"placeholder="Your Name" id="playerOneValue">
+    </div>
+    <div id = "twoPlayers" style="display: none;">
+        <input type="text" placeholder="Player One's Name" id="playerOneValue">
+        <input type="text" placeholder="Player Two's Name" id="playerTwoValue">
+    </div>
+    <div onclick="window.location.href = 'game.html';" id="startButton" style="display: none;">
+        <button>Start</button>
+    </div>
 </div>
+
+<script>
+    function onePlayer() { 
+        document.getElementById("instructions").style.display="none"; 
+        document.getElementById("playerNumber").style.display="none"; 
+        document.getElementById("singlePlayer").style.display="block"; 
+        document.getElementById("startButton").style.display="block"; 
+}
+    function twoPlayers() { 
+        document.getElementById("instructions").style.display="none"; 
+        document.getElementById("playerNumber").style.display="none"; 
+        document.getElementById("twoPlayers").style.display="block"; 
+        document.getElementById("startButton").style.display="block"; 
+}
+</script>
+
 </body>
+
 </html>
