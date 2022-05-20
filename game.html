@@ -6,11 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepardy</title>
     <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
+    <script src="game.js"></script>
 </head>
 <body>
-    <div class="header">
+  <input type="text" id="currentPlayer" style="display: none">
+
+    <div class="gameHeader">
+        
+      <div id="namesAndScores">
+        <div id="firstPlayerInfo">
+          FirstName: <label id="playerOneName"></label>
+          <br />
+          Score: <label id="playerOneScore"></label>
+        </div>
+        <br />
+        <br />
+        <div id="secondPlayerInfo">
+          SecondName: <label id="playerTwoName"></label>
+          <br />
+          Score:<label id="playerTwoScore"></label>
+        </div>
+      </div>
+
         <button onclick="window.location.href = 'main.html';">Pepardy</button>
     </div>
+    <div>
+        <table class="gameTable">
+            <tr class="categorys">
+              <th class="cat1">Movies</th>
+              <th>Tv Shows</th>
+              <th>Geography</th>
+              <th class="cat4">Random</th>
+            </tr>
+            <tr class="prize1">
+              <td><button onclick="quest(1)" class="q1btn">$250</button></td>
+              <td><button onclick="quest(2)" class="q1btn">$250</button></td>
+              <td><button onclick="quest(3)" class="q1btn">$250</button></td>
+              <td><button onclick="quest(4)" class="q1btn">$250</button></td>
+            </tr>
+            <tr class="prize2">
+              <td><button onclick="quest(5)" class="q1btn">$500</button></td>
+              <td><button onclick="quest(6)" class="q1btn">$500</button></td>
+              <td><button onclick="quest(7)" class="q1btn">$500</button></td>
+              <td><button onclick="quest(8)" class="q1btn">$500</button></td>
+            </tr>
+            <tr class="prize3">
+                <td><button onclick="quest(9)" class="q1btn">$750</button></td>
+                <td><button onclick="quest(10)" class="q1btn">$750</button></td>
+                <td><button onclick="quest(11)" class="q1btn">$750</button></td>
+                <td><button onclick="quest(12)" class="q1btn">$750</button></td>
+              </tr>
+          </table>
+    </div>
+    <div id="q1" style="display: none;">
+        <h3 id="question">Which movie has a clownfish as its main character?</h3>
+        <form id="answers">
+            <input type="radio" name="choice" value="Aquaman"> Aquaman
+            <input type="radio" name="choice" value="Dolphin Tale"> Dolphin Tale
+            <input type="radio" name="choice" value="Finding Nemo"> Finding Nemo
+            <input type="radio" name="choice" value="Jaws"> Jaws
+          </form>
+          <div id="subAnswer">
+          <button id="q1Submit" onclick="submitAnswer(1, 250)">Submit Answer</button>
+        </div>
+    </div>
+    <div id="q2" style="display: none;">
+        <h3 id="question">second question goes here</h3>
+        <form id="answers">
+            <input type="radio" name="choice" value="Aquaman"> Aquaman
+            <input type="radio" name="choice" value="Dolphin Tale"> Dolphin Tale
+            <input type="radio" name="choice" value="Finding Nemo"> Finding Nemo
+            <input type="radio" name="choice" value="Jaws"> Jaws
+          </form>
+          <div id="subAnswer">
+          <button id="q2Submit" onclick="submitAnswer(2, 250)">Submit Answer</button>
+        </div>
+    </div>
+    
 </body>
 </html>

@@ -7,10 +7,6 @@
     <title>Pepardy</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="jquery-ui.min.js"></script> -->
-
-
 </head>
 <body>
 <div id = "homePage">
@@ -30,31 +26,55 @@
         <h2>Instructions</h2>
         <p>Pick a tile from one of the 4 categorys with easiest at the top and more challenging at the bottom. The more challenging the question; the more money you could win. If you're playing with a friend then you will go back and forth picking and answering questions trying to earn the most money before all the questions have been answered.</p>
     </div>
-    <div id = "singlePlayer" style="display: none;">
-        <input type="text"placeholder="Your Name" id="playerOneValue">
+
+    <div id = "players" >
+        <input type="text" placeholder="Player One's Name" id="playerOneValue" style="display: none;">
+        <input type="text" placeholder="Player Two's Name" id="playerTwoValue" style="display: none;">
     </div>
-    <div id = "twoPlayers" style="display: none;">
-        <input type="text" placeholder="Player One's Name" id="playerOneValue">
-        <input type="text" placeholder="Player Two's Name" id="playerTwoValue">
+    <div id="startButton" style="display: none;">
+        <button onclick="startGame();" >Start</button>
     </div>
-    <div onclick="window.location.href = 'game.html';" id="startButton" style="display: none;">
-        <button>Start</button>
-    </div>
+
+    <input type="text" id="playerCount" style="display: none">
 </div>
 
 <script>
+    function startGame() {
+        var playerOneName = document.getElementById('playerOneValue').value;
+        var playerTwoName = document.getElementById('playerTwoValue').value;
+
+        var route = 'game.html';
+        var queryString = '';
+        var playerCount = getPlayerCount();
+
+        if(playerCount === '1') queryString = `?playerOneName=${playerOneName}`;
+        if(playerCount === '2') queryString = `?playerOneName=${playerOneName}\&playerTwoName=${playerTwoName}`;
+        
+        window.location.href = `${route}${queryString}&playerCount=${playerCount}`;
+    }
+    
     function onePlayer() { 
         document.getElementById("instructions").style.display="none"; 
         document.getElementById("playerNumber").style.display="none"; 
-        document.getElementById("singlePlayer").style.display="block"; 
+        document.getElementById("playerOneValue").style.display="block"; 
+        document.getElementById("playerTwoValue").style.display="none"; 
         document.getElementById("startButton").style.display="block"; 
+        
+        setPlayerCount(1);
 }
     function twoPlayers() { 
         document.getElementById("instructions").style.display="none"; 
         document.getElementById("playerNumber").style.display="none"; 
-        document.getElementById("twoPlayers").style.display="block"; 
-        document.getElementById("startButton").style.display="block"; 
+        document.getElementById("playerOneValue").style.display="block"; 
+        document.getElementById("playerTwoValue").style.display="block"; 
+        document.getElementById("startButton").style.display="block";
+        
+        setPlayerCount(2);
 }
+
+    let setPlayerCount = count => document.getElementById("playerCount").value = count;
+    function getPlayerCount() {return document.getElementById("playerCount").value;}
+
 </script>
 
 </body>
