@@ -50,7 +50,7 @@ body {
     background-color: red;
     border: 5px solid red;
     color: white;
-    padding: 2em;
+    padding: 3em;
     margin: 1em;
     font-size: 30px;
     opacity: 0.8;
@@ -119,37 +119,22 @@ body {
 }
 
 
-#singlePlayer {
+#players {
     text-align: center;
     margin-top: 5em;
+    margin-left: 37%;
 }
-#singlePlayer input[type=text] {
-    margin-right: 0.5em;
+#players input[type=text] {
     padding: 8px 12px;
     font-size: 30px;
+    display: inline-block;
     color: red;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border: 5px solid red;
     opacity: 0.8;
     border-radius: 10px;
+    margin-bottom: 2em;
 }
-
-
-#twoPlayers {
-    text-align: center;
-    margin-top: 5em;
-}
-#twoPlayers input[type=text] {
-    margin-left: 0.5em;
-    padding: 8px 12px;
-    font-size: 30px;
-    color: red;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    border: 5px solid red;
-    opacity: 0.8;
-    border-radius: 10px;
-}
-
 
 .gameHeader {
     background-color: red;
@@ -203,8 +188,10 @@ body {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.gameTable .prize1 button {
+.red {
     background-color: red;
+}
+.gameTable .prize1 button {
     opacity: 0.8;
     padding: 1em;
     border-radius: 10px;
@@ -214,7 +201,6 @@ body {
     border-color: red;
 }
 .gameTable .prize2 button {
-    background-color: red;
     opacity: 0.8;
     padding: 1em;
     border-radius: 10px;
@@ -224,7 +210,6 @@ body {
     border-color: red;
 }
 .gameTable .prize3 button {
-    background-color: red;
     opacity: 0.8;
     padding: 1em;
     border-radius: 10px;
@@ -261,4 +246,45 @@ body {
     border-radius: 10px;
     padding: 0.8em;
     border-color: red;
+}
+
+#gameHeader {
+
+}
+#namesAndScores {
+    display: flex;
+}
+#namesAndScores button {
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#firstPlayerInfo {
+    display: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1;
+    margin-left: 4em;
+    font-size: 40px;
+}
+#playerOneName {
+    font-size: 30px;
+}
+#playerOneScore {
+    font-size: 40px;
+}
+#secondPlayerInfo {
+    display: right;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1;
+    margin-right: 4em;
+    font-size: 40px;
+}
+#playerTwoName {
+    font-size: 30px;
+}
+#playerTwoScore {
+    font-size: 40px;
+}
+
+.answeredQuest {
+    background-color: grey;
 }

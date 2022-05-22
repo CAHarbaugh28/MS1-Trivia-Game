@@ -15,73 +15,222 @@
         
       <div id="namesAndScores">
         <div id="firstPlayerInfo">
-          FirstName: <label id="playerOneName"></label>
+           <label id="playerOneName"></label>
           <br />
-          Score: <label id="playerOneScore"></label>
+          <label id="playerOneScore"></label>
+          <h3 style="display: none;" id="playerOneWins">is the winner</h3>
         </div>
         <br />
+        <button onclick="window.location.href = 'main.html';">Pepardy</button>
         <br />
         <div id="secondPlayerInfo">
-          SecondName: <label id="playerTwoName"></label>
+          <label id="playerTwoName"></label>
           <br />
-          Score:<label id="playerTwoScore"></label>
+          <label id="playerTwoScore"></label>
+          <h3 style="display: none;" id="playerTwoWins">is the winner</h3>
         </div>
       </div>
 
-        <button onclick="window.location.href = 'main.html';">Pepardy</button>
+
     </div>
+
+
+
+
     <div>
         <table class="gameTable">
             <tr class="categorys">
               <th class="cat1">Movies</th>
-              <th>Tv Shows</th>
+              <th>"The Office (US)"</th>
               <th>Geography</th>
               <th class="cat4">Random</th>
             </tr>
             <tr class="prize1">
-              <td><button onclick="quest(1)" class="q1btn">$250</button></td>
-              <td><button onclick="quest(2)" class="q1btn">$250</button></td>
-              <td><button onclick="quest(3)" class="q1btn">$250</button></td>
-              <td><button onclick="quest(4)" class="q1btn">$250</button></td>
+              <td><button onclick="quest(1)" class="q1btn red">$250</button></td>
+              <td><button onclick="quest(2)" class="q1btn red">$250</button></td>
+              <td><button onclick="quest(3)" class="q1btn red">$250</button></td>
+              <td><button onclick="quest(4)" class="q1btn red">$250</button></td>
             </tr>
             <tr class="prize2">
-              <td><button onclick="quest(5)" class="q1btn">$500</button></td>
-              <td><button onclick="quest(6)" class="q1btn">$500</button></td>
-              <td><button onclick="quest(7)" class="q1btn">$500</button></td>
-              <td><button onclick="quest(8)" class="q1btn">$500</button></td>
+              <td><button onclick="quest(5)" class="q1btn red">$500</button></td>
+              <td><button onclick="quest(6)" class="q1btn red">$500</button></td>
+              <td><button onclick="quest(7)" class="q1btn red">$500</button></td>
+              <td><button onclick="quest(8)" class="q1btn red">$500</button></td>
             </tr>
             <tr class="prize3">
-                <td><button onclick="quest(9)" class="q1btn">$750</button></td>
-                <td><button onclick="quest(10)" class="q1btn">$750</button></td>
-                <td><button onclick="quest(11)" class="q1btn">$750</button></td>
-                <td><button onclick="quest(12)" class="q1btn">$750</button></td>
+                <td><button onclick="quest(9)" class="q1btn red">$750</button></td>
+                <td><button onclick="quest(10)" class="q1btn red">$750</button></td>
+                <td><button onclick="quest(11)" class="q1btn red">$750</button></td>
+                <td><button onclick="quest(12)" class="q1btn red">$750</button></td>
               </tr>
           </table>
     </div>
+
+ 
     <div id="q1" style="display: none;">
         <h3 id="question">Which movie has a clownfish as its main character?</h3>
         <form id="answers">
-            <input type="radio" name="choice" value="Aquaman"> Aquaman
-            <input type="radio" name="choice" value="Dolphin Tale"> Dolphin Tale
-            <input type="radio" name="choice" value="Finding Nemo"> Finding Nemo
-            <input type="radio" name="choice" value="Jaws"> Jaws
+            <input type="radio" name="choice" class="answer" value="Aquaman"> Aquaman
+            <input type="radio" name="choice" class="answer" value="Dolphin Tale"> Dolphin Tale
+            <input type="radio" name="choice" class="answer" value="Finding Nemo"> Finding Nemo
+            <input type="radio" name="choice" class="answer" value="Jaws"> Jaws
           </form>
           <div id="subAnswer">
           <button id="q1Submit" onclick="submitAnswer(1, 250)">Submit Answer</button>
         </div>
     </div>
+
     <div id="q2" style="display: none;">
-        <h3 id="question">second question goes here</h3>
+      <h3 id="question">Which "The Office" character said “I’m not superstitious, but I am a little stitious.”?</h3>
         <form id="answers">
-            <input type="radio" name="choice" value="Aquaman"> Aquaman
-            <input type="radio" name="choice" value="Dolphin Tale"> Dolphin Tale
-            <input type="radio" name="choice" value="Finding Nemo"> Finding Nemo
-            <input type="radio" name="choice" value="Jaws"> Jaws
-          </form>
-          <div id="subAnswer">
-          <button id="q2Submit" onclick="submitAnswer(2, 250)">Submit Answer</button>
-        </div>
+          <input type="radio" name="choice" class="answer" value="Dwight"> Dwight
+          <input type="radio" name="choice" class="answer" value="Michael"> Michael
+          <input type="radio" name="choice" class="answer" value="Andy"> Andy
+          <input type="radio" name="choice" class="answer" value="Kevin"> Kevin
+        </form>
+      <div id="subAnswer">
+        <button id="q2Submit" onclick="submitAnswer(2, 250)">Submit Answer</button>
+      </div>
     </div>
-    
+  
+  <div id="q3" style="display: none;">
+    <h3 id="question">What is the only state the shares a border with Maine?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="New Hampshire"> New Hampshire
+        <input type="radio" name="choice" class="answer" value="Vermont"> Vermont
+        <input type="radio" name="choice" class="answer" value="Massachuetts"> Massachuetts
+        <input type="radio" name="choice" class="answer" value="New Jersey"> New Jersey
+      </form>
+    <div id="subAnswer">
+      <button id="q3Submit" onclick="submitAnswer(3, 250)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q4" style="display: none;">
+    <h3 id="question">Who did Kim Kardashian recently have a divorce from?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="Pete Davison"> The Waterboy
+        <input type="radio" name="choice" class="answer" value="Kanye West"> Kanye West
+        <input type="radio" name="choice" class="answer" value="Michael Jordan"> Michael Jordan
+        <input type="radio" name="choice" class="answer" value="Travis Scott"> Travis Scott
+      </form>
+    <div id="subAnswer">
+      <button id="q4Submit" onclick="submitAnswer(4, 250)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q5" style="display: none;">
+    <h3 id="question">Which movie brought in the most money at the box office?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="Avatar"> Avatar
+        <input type="radio" name="choice" class="answer" value="Avenger's Endgame"> Avenger's Endgame
+        <input type="radio" name="choice" class="answer" value="Life of Pi"> Life of Pi
+        <input type="radio" name="choice" class="answer" value="Titanic"> Titanic
+      </form>
+    <div id="subAnswer">
+      <button id="q5Submit" onclick="submitAnswer(5, 500)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q6" style="display: none;">
+    <h3 id="question">How many episodes of "The Office" are there?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="241"> 241
+        <input type="radio" name="choice" class="answer" value="187"> 187
+        <input type="radio" name="choice" class="answer" value="250"> 250
+        <input type="radio" name="choice" class="answer" value="201"> 201
+      </form>
+    <div id="subAnswer">
+      <button id="q6Submit" onclick="submitAnswer(6, 500)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q7" style="display: none;">
+    <h3 id="question">What continent is the country Turkey in?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="Asia"> Asia
+        <input type="radio" name="choice" class="answer" value="South America"> South America
+        <input type="radio" name="choice" class="answer" value="Europe"> Europe
+        <input type="radio" name="choice" class="answer" value="Europe and Asia"> Europe and Asia
+      </form>
+    <div id="subAnswer">
+      <button id="q7Submit" onclick="submitAnswer(7, 500)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q8" style="display: none;">
+    <h3 id="question">Which singer’s real name is Stefani Joanne Angelina Germanotta?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="J Lo"> J Lo
+        <input type="radio" name="choice" class="answer" value="Sia"> Sia
+        <input type="radio" name="choice" class="answer" value="Beyonce"> Beyonce
+        <input type="radio" name="choice" class="answer" value="Lady Gaga"> Lady Gaga
+      </form>
+    <div id="subAnswer">
+      <button id="q8Submit" onclick="submitAnswer(8, 500)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q9" style="display: none;">
+    <h3 id="question">Which movies main character can fly with and umbrella?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="Nanny McPhee"> Nanny McPhee
+        <input type="radio" name="choice" class="answer" value="Annie"> Annie
+        <input type="radio" name="choice" class="answer" value="Mary Poppins"> Mary Poppins
+        <input type="radio" name="choice" class="answer" value="Home Alone"> Home Alone
+      </form>
+    <div id="subAnswer">
+      <button id="q9Submit" onclick="submitAnswer(9, 750)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q10" style="display: none;">
+    <h3 id="question">What state "The Office" take place?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="New York"> New York
+        <input type="radio" name="choice" class="answer" value="Delaware"> Delaware
+        <input type="radio" name="choice" class="answer" value="Pennsylvania"> Pennsylvania
+        <input type="radio" name="choice" class="answer" value="North Carolina"> North Carolina
+      </form>
+    <div id="subAnswer">
+      <button id="q10Submit" onclick="submitAnswer(10, 750)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q11" style="display: none;">
+    <h3 id="question">Which is the 2nd largest country by land area?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="Russia"> Russia
+        <input type="radio" name="choice" class="answer" value="Greenland"> Greenland
+        <input type="radio" name="choice" class="answer" value="Canada"> Canada
+        <input type="radio" name="choice" class="answer" value="China"> China
+      </form>
+    <div id="subAnswer">
+      <button id="q11Submit" onclick="submitAnswer(11, 750)">Submit Answer</button>
+    </div>
+  </div>
+
+  <div id="q12" style="display: none;">
+    <h3 id="question">Which car brand makes the Corvette?</h3>
+      <form id="answers">
+        <input type="radio" name="choice" class="answer" value="Chevrolet"> Chevrolet
+        <input type="radio" name="choice" class="answer" value="Ford"> Ford
+        <input type="radio" name="choice" class="answer" value="Jaguar"> Jaguar
+        <input type="radio" name="choice" class="answer" value="Kia"> Kia
+      </form>
+    <div id="subAnswer">
+      <button id="q12Submit" onclick="submitAnswer(12, 750)">Submit Answer</button>
+    </div>
+  </div>
+   
+  <div id="correct" style="display: none;">
+    <h3>Correct!</h3>
+  </div>
+  <div class="incorrect" style="display: none;">
+    <h3>Incorrect</h3>
+  </div>
+
+
+
 </body>
 </html>
