@@ -1,0 +1,174 @@
+@import "config";
+@import "header";
+@import "utilities";
+@import "gameBtnConfig";
+
+
+// Home page css
+#homePage {
+    #playerNumber {
+        text-align: center;
+        button {
+            background-color: $myColor;
+            font-family: $myFont;
+            color: white;
+            border: 5px solid $myColor;
+            padding: 3em;
+            margin: 1em;
+            font-size: 30px;
+            border-radius: 10px;
+            transition: all 0.5s;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            &:hover {
+                @include btn-hover
+            }
+        }
+        // button:hover {
+        //     border: 5px solid $myColor;
+        //     background-color: white;
+        //     color: $myColor;
+        // }
+    }
+
+    #instructions {
+        @include center-colored;
+        font-size: 18px;
+    }
+
+    #players {
+        margin-left: 32%;
+        input[type=text] {
+            @include center-colored;
+            font-family: $myFont;
+            display: inline-block;
+            width: 50%;
+            font-size: 30px;
+            border: 5px solid $myColor;
+            border-radius: 10px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+    }
+
+    #startButton {
+        text-align: center;
+        button {
+        background-color: $myColor;
+        font-family: $myFont;
+        color: white;
+        border: 5px solid $myColor;
+        border-radius: 10px;
+        font-size: 30px;
+        padding: .5em;
+        margin: 1em;
+        width: 80%;
+        display: inline-block;
+        transition: all 0.5s;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        &:hover {
+            @include btn-hover
+        }
+        }
+    }
+
+}
+
+// Game page css
+.header {
+    #namesAndScores {
+        display: flex;
+        button {
+            margin: auto;
+        }
+        #firstPlayerInfo {
+            display: left;
+            line-height: 1;
+            margin-left: 4em;
+            font-size: 40px;
+            position: relative;
+            #playerOneUp {
+                font-size: 28px;
+                position: absolute;
+                bottom: 0;
+                margin: auto;
+                width: max-content;
+            }
+        }
+        #secondPlayerInfo {
+            display: right;
+            line-height: 1;
+            margin-right: 4em;
+            font-size: 40px;
+        }
+    }
+}
+
+.gameTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1em;
+    th {
+        background-color: $myColor;
+        color: white;
+        td {
+            padding: 1em;
+        }
+    }
+    td {
+        text-align: center;
+    }
+    .categorys {
+        font-size: 30px;
+        th {
+            padding: .5em 0;
+        }
+        .cat1 {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .cat4 {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+    button {
+        @include red;
+        &:hover {
+            @include btn-hover
+        }
+    }
+    .answeredQuest {
+        background-color: grey;
+        border-color: grey;
+    }
+}
+
+#question {
+    @include center-colored;
+    font-size: 30px;
+    margin: 0.5em;
+}
+#answers {
+    @include center-colored;
+    font-size: 20px;
+    accent-color: $myColor;
+}
+#subAnswer {
+    text-align: center;
+    margin-top: 0.5em;
+    button {
+        border: 5px solid $myColor;
+        transition: 0.5s;
+        background-color: $myColor;
+        color: white;
+        font-size: 25px;
+        border-radius: 10px;
+        padding: 0.8em;
+        border-color: $myColor;
+        &:hover {
+            @include btn-hover
+        }
+    }
+}

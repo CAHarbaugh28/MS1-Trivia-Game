@@ -55,9 +55,10 @@ function setNamesFromQueryString() {
       }
 }
 
+
 function submitAnswer(questionNum, questionAmount){
     var currentPlayer = getCurrentPlayer();
-    
+    debugger;
     let ele = document.querySelectorAll(".answer")
         for (let i = 0; i < ele.length; i++) {
             if (ele[i].checked){
@@ -68,8 +69,20 @@ function submitAnswer(questionNum, questionAmount){
     setCurrentPlayerScore(questionNum, questionAmount, answer);
 
     setNewPlayerTurn(currentPlayer);
+
+    setYoureUpMessage(currentPlayer);
 }
 
+function setYoureUpMessage(currentPlayer) {
+    if(currentPlayer === '2') {
+        document.getElementById("playerOneUp").style.display="block";
+        document.getElementById("playerTwoUp").style.display="none";
+    } else {
+        document.getElementById("playerTwoUp").style.display="block";
+        document.getElementById("playerOneUp").style.display="none";
+    } 
+
+}
 
 let setCurrentPlayer = number => document.getElementById("currentPlayer").value = number;
 
@@ -82,12 +95,14 @@ function setNewPlayerTurn(currentPlayer) {
 }
 
 function setCurrentPlayerScore(questionNum, questionAmount, answer) {
+    debugger;
     var currentPlayer = getCurrentPlayer();
     var currentScore = 0;
     console.log(typeof quizAnswers[questionNum])
     if(currentPlayer === '1' && answer === quizAnswers[questionNum]) {
         currentScore = document.getElementById("playerOneScore").innerHTML;
         document.getElementById("playerOneScore").innerHTML = +currentScore + +questionAmount;
+        
     } else if(answer === quizAnswers[questionNum]) {
         currentScore = document.getElementById("playerTwoScore").innerHTML;
         document.getElementById("playerTwoScore").innerHTML = +currentScore + +questionAmount;
@@ -98,10 +113,10 @@ function getCurrentPlayer() {
     return document.getElementById("currentPlayer").value;
 }
 
-let oneWins = document.getElementById("playerOneWins")
-let twoWins = document.getElementById("playerTwoWins")
-    if (button.classList.contains("answeredQuest") == false && "playerOneScore" > "playerTwoScore") {
-        document.getElementById(oneWins).style.display="block";
-    } else {
-        document.getElementById(twoWins).style.display="block";
-    }
+//let oneWins = document.getElementById("playerOneWins")
+//let twoWins = document.getElementById("playerTwoWins")
+///    if (button.classList.contains("answeredQuest") == false && "playerOneScore" > "playerTwoScore") {
+//        document.getElementById(oneWins).style.display="block";
+//    } else {
+//        document.getElementById(twoWins).style.display="block";
+//    }

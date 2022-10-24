@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepardy</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="scss/style.css">
     <script src="game.js"></script>
 </head>
 <body>
   <input type="text" id="currentPlayer" style="display: none">
 
-    <div class="gameHeader">
+    <div class="header">
         
       <div id="namesAndScores">
         <div id="firstPlayerInfo">
            <label id="playerOneName"></label>
           <br />
           <label id="playerOneScore"></label>
+          <h5 style="display: block;" id="playerOneUp">You're up!</h5>
           <h3 style="display: none;" id="playerOneWins">is the winner</h3>
         </div>
         <br />
@@ -27,6 +28,7 @@
           <label id="playerTwoName"></label>
           <br />
           <label id="playerTwoScore"></label>
+          <h5 style="display: none;" id="playerTwoUp">You're up!</h5>
           <h3 style="display: none;" id="playerTwoWins">is the winner</h3>
         </div>
       </div>
@@ -77,7 +79,7 @@
           </form>
           <div id="subAnswer">
           <button id="q1Submit" onclick="submitAnswer(1, 250)">Submit Answer</button>
-        </div>
+          </div>
     </div>
 
     <div id="q2" style="display: none;">
@@ -219,10 +221,11 @@
         <input type="radio" name="choice" class="answer" value="Kia"> Kia
       </form>
     <div id="subAnswer">
-      <button id="q12Submit" onclick="submitAnswer(12, 750)">Submit Answer</button>
+      <button id="q12Submit" class="changeTurn" onclick="submitAnswer(12, 750)">Submit Answer</button>
     </div>
   </div>
-   
+
+  
   <div id="correct" style="display: none;">
     <h3>Correct!</h3>
   </div>
